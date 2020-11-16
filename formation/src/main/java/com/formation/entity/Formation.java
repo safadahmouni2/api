@@ -7,31 +7,27 @@ import java.util.Date;
 
 @Entity
 @Data
-@Table(name="Formations")
+@Table(name = "formations")
 
-public class Formation{
+public class Formation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
+    private Long id;
 
-    @Column(name="Name")
+    @Column(name="name")
+
     private String name;
 
-    @Column(name="Date Debut")
+    @Column(name="date_debut")
     private Date dateDebut;
 
-    @Column(name="Date Fin")
-    private Date dateFin;
+    @Column(name="date_fin")
+    private String DateFin;
 
-
-
-    public Formation(String name, Date dateDebut, Date dateFin) {
-        this.name = name;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-   //     this.formateur = formateur;
-    }
+    @ManyToOne(optional=false)
+    @JoinColumn(name="id_formateur")
+    private Formateur formateur;
 
     public Formation() {
     }

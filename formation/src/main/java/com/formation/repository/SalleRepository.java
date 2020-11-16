@@ -1,9 +1,10 @@
 package com.formation.repository;
 
-import com.formation.entity.Formation;
+import com.formation.entity.Salle;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FormationRepository  extends JpaRepository<Formation ,Long> {
+
+public interface SalleRepository extends JpaRepository<Salle,Long> {
 }
